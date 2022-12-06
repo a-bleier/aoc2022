@@ -7,10 +7,7 @@ end
 function find_offset(marker_length ::Int, input ::String) ::Int
 	counter = Dict{Char, Int}(zip("abcdefghijklmnopqrstuvwxyz", zeros(26)))
 	single_letters ::Int = 0
-	res1 ::Int, res2 ::Int = 0, 0
 	for (i,current) in enumerate(input)
-
-		current ::Char = input[i]
 
 		counter[current] += 1
 		if counter[current] == 1
@@ -30,7 +27,6 @@ function find_offset(marker_length ::Int, input ::String) ::Int
 
 		if single_letters == marker_length
 			return i
-			break
 		end
 	end
 	return 0
